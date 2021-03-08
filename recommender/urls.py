@@ -3,5 +3,6 @@ from . import views
 
 app_name = 'authentication'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.home, name='rec-home'),
+    path('results', views.index, name='index'),
 ]
