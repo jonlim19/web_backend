@@ -9,4 +9,4 @@ def index(request):
     return render(request,'authentication/index.html', {'all':all_uni})
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'pages/home.html')

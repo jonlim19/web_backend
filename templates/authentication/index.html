@@ -1,3 +1,24 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>Explore different Universities</h1>
+<p>Choose from this list universities to explore on what kind of courses they have</p>
+<table>
+  <thead>
+    <tr>
+      <th>Institution Name</th>
+      <th>Country</th>
+      <th>Click to explore more</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in all %}
+    <tr>
+    <td>{{ row.Institution_Name }}</td>
+    <td>{{ row.Country }}</td>
+    <td><a class="nav-item nav-link" href="#">Visit Site</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
 
-<h1>This is working</h1>
-<p>{{all}}</p>
+</table>
+{% endblock content%}
