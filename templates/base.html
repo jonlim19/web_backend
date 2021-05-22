@@ -22,7 +22,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="#">UniFind</a>
+          <a class="navbar-brand mr-4" href="{% url 'home' %}"><h1>UniFind</h1></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -41,6 +41,8 @@
       </nav>
     </header>
     <main role="main" class="container">
+      {% load static %}
+      <img src="{% static 'logo.png' %}" alt="main-logo">
       <div class="row">
         <div class="col-md-8">
           {% block content %}{% endblock %}

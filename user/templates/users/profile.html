@@ -3,9 +3,20 @@
 <div class="content-section">
   <div class="media">
     <div class="media-body">
-      <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">{{ user.email }}</p>
+      <h2 class="account-heading">Welcome {{ user.username }}</h2>
+      <p>Enter your chosen University to get top 5 list of alternatives</p>
+      <input type="text" name="user_input" value="">
+      <a type="button" class="btn btn-outline-info" href="{% url 'results' %}">GO!</a>
     </div>
   </div>
-  <!-- FORM HERE -->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Profile Info</legend>
+      {{ u_form.as_p }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+  </form>
 {% endblock content%}
